@@ -2,7 +2,7 @@ import React from 'react';
 import ProductCard from './ProductCard';
 import '../styles/ProductList.css';
 
-function ProductList({ products, onAddToCart }) {  // ← Add onAddToCart prop
+function ProductList({ products, onAddToCart, onViewProduct, onToggleWishlist, isInWishlist }) {
   return (
     <div className="product-list">
       <h2 className="section-title">Our Products</h2>
@@ -11,7 +11,10 @@ function ProductList({ products, onAddToCart }) {  // ← Add onAddToCart prop
           <ProductCard 
             key={product.id} 
             product={product}
-            onAddToCart={onAddToCart}  // ← Pass it down
+            onAddToCart={onAddToCart}
+            onViewProduct={onViewProduct}
+            onToggleWishlist={onToggleWishlist}
+            isWishlisted={isInWishlist ? isInWishlist(product.id) : false}
           />
         ))}
       </div>

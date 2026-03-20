@@ -146,30 +146,6 @@
   transform: scale(0.98);
 }
 
-.cart-item {
-  /* TODO: Layout each cart item */
-  /* Use flexbox or grid */
-  /* Add border between items */
-  /* padding */
-}
-
-.cart-item-image {
-  /* TODO: Small thumbnail size */
-  /* width: 60px; height: 60px; */
-  /* object-fit: cover; border-radius */
-}
-
-.quantity-controls {
-  /* TODO: Style quantity buttons */
-  /* Display them in a row */
-}
-
-.cart-footer {
-  /* TODO: Style footer */
-  /* Stick to bottom */
-  /* Show total prominently */
-}
-
 /* Add mobile responsive styles */
 @media (max-width: 480px) {
   .cart-sidebar {
