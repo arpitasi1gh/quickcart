@@ -1,10 +1,34 @@
 import React from 'react';
 import '../styles/ProductCard.css';
 
-function ProductCard({ product, onAddToCart }) {
+function ProductCard({
+  product,
+  onAddToCart,
+  onViewProduct,
+  onToggleWishlist,
+  isWishlisted,
+}) {
+  const handleView = () => {
+    if (onViewProduct) {
+      onViewProduct(product);
+    }
+  };
+
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={handleView}>
       <div className="product-image-container">
+        <button
+          className="wishlist-btn"
+          onClick={(e) => {
+            e.stopPropagation();
+            if (onToggleWishlist) {
+              onToggleWishlist(product);
+            }
+          }}
+          aria-label="Toggle wishlist"
+        >
+          {isWishlisted ? '♥' : '♡'}
+        </button>
         <img 
           src={product.image} 
           alt={product.name} 
@@ -21,7 +45,11 @@ function ProductCard({ product, onAddToCart }) {
         
         <button 
           className="add-to-cart-btn"
-          onClick={() => onAddToCart(product)}
+          onClick={(e) => {
+            e.stopPropagation();
+            onAddToCart(product);
+            handleView();
+          }}
         >
           Add to Cart
         </button>
