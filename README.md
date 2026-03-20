@@ -12,7 +12,7 @@ A lightweight and interactive shopping cart application built with **React + Vit
 
 ## 🚀 Live Demo
 
-👉 https://quickcart-six-vert.vercel.app/
+👉 https://quickcart-six-vert.vercel.app
 
 ---
 
